@@ -81,6 +81,22 @@
     <div slot="hotspot-4" class="hotspot" data-position="4m 1.5m .25m" data-normal="0m 1m 0m" data-label="Worship" onclick="showPano('https://lemonleim.github.io/200_parker_ct/room_4.JPG')"></div>
   </model-viewer>
 
+  <script>
+    // Preload panoramas after model loads
+    const model = document.querySelector('model-viewer');
+    const panoImages = ['room_1.JPG','room_2.JPG','room_3.JPG','room_4.JPG'];
+    const preloadedPanoramas = [];
+  
+    model.addEventListener('load', () => {
+      console.log('Model loaded! Preloading panoramas...');
+      panoImages.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedPanoramas.push(img);
+      });
+    });
+  </script>
+
   <!-- Panorama Viewer -->
   <div id="panorama"></div>
 
@@ -113,5 +129,6 @@
 
 </body>
 </html>
+
 
 
