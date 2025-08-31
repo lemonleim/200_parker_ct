@@ -84,7 +84,12 @@
   <script>
     // Preload panoramas after model loads
     const model = document.querySelector('model-viewer');
-    const panoImages = ['room_1.JPG','room_2.JPG','room_3.JPG','room_4.JPG'];
+    const panoImages = [
+      'https://lemonleim.github.io/200_parker_ct/room_1.JPG',
+      'https://lemonleim.github.io/200_parker_ct/room_2.JPG',
+      'https://lemonleim.github.io/200_parker_ct/room_3.JPG',
+      'https://lemonleim.github.io/200_parker_ct/room_4.JPG'
+    ];
     const preloadedPanoramas = [];
   
     model.addEventListener('load', () => {
@@ -129,6 +134,7 @@
 
 </body>
 </html>
+
 
 
 
